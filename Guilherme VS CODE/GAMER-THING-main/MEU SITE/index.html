@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GAMER THING</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>Gamer<span>Thing</span></h1>
+                <p>O sonho de todo gamer está aqui!</p>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="#destaques">Destaques</a></li>
+                    <li><a href="#produtos">Produtos</a></li>
+                    <li><a href="#sobre">Sobre Nós</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+            <div class="cart">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count">0</span>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h2>Monte o PC Gamer dos seus sonhos</h2>
+            <p>As melhores peças com os melhores preços do mercado</p>
+            <a href="#produtos" class="btn">Ver Produtos</a>
+        </div>
+    </section>
+
+    <section id="destaques" class="featured">
+        <div class="container">
+            <h2 class="section-title">Destaques</h2>
+            <div class="featured-grid">
+                <div class="featured-item">
+                    <img src="img/Placa de vídeo 4090 Ti.jpeg" alt="Placa de Vídeo 4090 Ti">
+                    <h3>RTX 4090 Ti</h3>
+                    <p class="price">R$ 12.999,90</p>
+                    <button class="btn-add">Adicionar ao Carrinho</button>
+                </div>
+                <div class="featured-item">
+                    <img src="img/Processador intel core i9.jpeg" alt="Processador Intel i9">
+                    <h3>Intel Core i9 13900K</h3>
+                    <p class="price">R$ 4.599,90</p>
+                    <button class="btn-add">Adicionar ao Carrinho</button>
+                </div>
+                <div class="featured-item">
+                    <img src="img/Monitor Gamer 240hz.jpeg" alt="Monitor Gamer 240Hz">
+                    <h3>Monitor ASUS 240Hz</h3>
+                    <p class="price">R$ 3.299,90</p>
+                    <button class="btn-add">Adicionar ao Carrinho</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="produtos" class="products">
+        <div class="container">
+            <h2 class="section-title">Nossos Produtos</h2>
+            <div class="filter">
+                <button class="filter-btn active" data-filter="all">Todos</button>
+                <button class="filter-btn" data-filter="hardware">Hardware</button>
+                <button class="filter-btn" data-filter="perifericos">Periféricos</button>
+            </div>
+            <div class="products-grid">
+                <!-- Produtos serão adicionados via JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <section id="sobre" class="about">
+        <div class="container">
+            <h2 class="section-title">Sobre a GamerThinf</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>A GamerThing nasceu da paixão por jogos e tecnologia. Nossa missão é fornecer os melhores componentes para você montar o PC gamer perfeito, seja para competições ou para diversão.</p>
+                    <p>Com mais de 10 anos no mercado, temos parceria com os maiores fabricantes e oferecemos garantia estendida em todos os produtos.</p>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Produtos de alta qualidade</li>
+                        <li><i class="fas fa-check"></i> Frete rápido para todo Brasil</li>
+                        <li><i class="fas fa-check"></i> Suporte técnico especializado</li>
+                        <li><i class="fas fa-check"></i> Parcelamento em até 12x</li>
+                    </ul>
+                </div>
+                <div class="about-image">
+                    <img src="img/Setup Gamer.jpeg" alt="Setup Gamer">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contato" class="contact">
+        <div class="container">
+            <h2 class="section-title">Entre em Contato</h2>
+            <div class="contact-content">
+                <form class="contact-form">
+                    <input type="text" placeholder="Seu nome" required>
+                    <input type="email" placeholder="Seu e-mail" required>
+                    <input type="tel" placeholder="Seu telefone">
+                    <textarea placeholder="Sua mensagem" required></textarea>
+                    <button type="submit" class="btn">Enviar Mensagem</button>
+                </form>
+                <div class="contact-info">
+                    <h3>Informações de Contato</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Rua Almirante Alexandrino 840</p>
+                    <p><i class="fas fa-phone"></i> (41) 98883-1122</p>
+                    <p><i class="fas fa-envelope"></i> contato: gamerthing@gmail.com</p>
+                    <div class="social">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>Gamer<span>Thing</span></h3>
+                    <p>As melhores peças para seu setup gamer do jeito que você
+                        sempre sonhou.
+                    </p>
+                </div>
+                <div class="footer-links">
+                    <h4>Links Rápidos</h4>
+                    <ul>
+                        <li><a href="#destaques">Destaques</a></li>
+                        <li><a href="#produtos">Produtos</a></li>
+                        <li><a href="#sobre">Sobre Nós</a></li>
+                        <li><a href="#contato">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="footer-payment">
+                    <h4>Formas de Pagamento</h4>
+                    <div class="payment-methods">
+                        <i class="fab fa-cc-visa"></i>
+                        <i class="fab fa-cc-mastercard"></i>
+                        <i class="fab fa-cc-amex"></i>
+                        <i class="fab fa-cc-paypal"></i>
+                        <i class="fab fa-btc"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 GameTech. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

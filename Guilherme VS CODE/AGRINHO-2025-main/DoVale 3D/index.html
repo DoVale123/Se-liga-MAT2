@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agrinho 2025 - Inovação Tecnológica no Campo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --verde-agrinho: #2ecc71;
+            --verde-escuro: #27ae60;
+            --amarelo: #f1c40f;
+            --laranja: #e67e22;
+            --azul: #3498db;
+            --branco: #ffffff;
+            --cinza-claro: #ecf0f1;
+            --cinza-escuro: #34495e;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--cinza-claro);
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 85%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--verde-escuro), var(--verde-agrinho));
+            color: white;
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 50px;
+            margin-right: 15px;
+        }
+        
+        .logo-text h1 {
+            font-size: 24px;
+            font-weight: 700;
+        }
+        
+        .logo-text span {
+            font-size: 14px;
+            display: block;
+        }
+        
+        /* Navigation */
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 25px;
+            position: relative;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 5px 0;
+        }
+        
+        nav ul li a:hover {
+            color: var(--amarelo);
+        }
+        
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--amarelo);
+            bottom: 0;
+            left: 0;
+            transition: width 0.3s;
+        }
+        
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+        
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+        
+        .btn-primary {
+            background-color: var(--amarelo);
+            color: var(--cinza-escuro);
+            box-shadow: 0 4px 15px rgba(241, 196, 15, 0.4);
+        }
+        
+        .btn-primary:hover {
+            background-color: #f39c12;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(241, 196, 15, 0.6);
+        }
+        
+        .btn-secondary {
+            border: 2px solid var(--branco);
+            color: var(--branco);
+        }
+        
+        .btn-secondary:hover {
+            background-color: var(--branco);
+            color: var(--verde-escuro);
+        }
+        
+        .btn-tertiary {
+            background-color: var(--laranja);
+            color: white;
+        }
+        
+        .btn-tertiary:hover {
+            background-color: #d35400;
+            transform: translateY(-3px);
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            margin-top: 90px;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            animation: fadeInDown 1s ease;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            animation: fadeInUp 1s ease;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        /* Features Section */
+        .features {
+            padding: 100px 0;
+            background-color: var(--branco);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--verde-escuro);
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background-color: var(--amarelo);
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+        
+        .section-title p {
+            color: #7f8c8d;
+            max-width: 700px;
+            margin: 20px auto 0;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .feature-card {
+            background: var(--branco);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            text-align: center;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(45deg, var(--verde-agrinho), var(--azul));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            color: white;
+            font-size: 30px;
+        }
+        
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--cinza-escuro);
+        }
+        
+        .feature-card p {
+            color: #7f8c8d;
+            margin-bottom: 20px;
+        }
+        
+        /* Technologies Section */
+        .technologies {
+            padding: 100px 0;
+            background-color: var(--cinza-claro);
+        }
+        
+        .tech-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+        
+        .tech-image {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .tech-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+        
+        .tech-image:hover img {
+            transform: scale(1.05);
+        }
+        
+        .tech-content h3 {
+            font-size: 2rem;
+            color: var(--verde-escuro);
+            margin-bottom: 20px;
+        }
+        
+        .tech-content p {
+            margin-bottom: 30px;
+            color: #555;
+        }
+        
+        .tech-list {
+            margin-bottom: 30px;
+        }
+        
+        .tech-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+        
+        .tech-item i {
+            color: var(--verde-agrinho);
+            font-size: 20px;
+            margin-right: 15px;
+            margin-top: 3px;
+        }
+        
+        /* Stats Section */
+        .stats {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--verde-escuro), var(--verde-agrinho));
+            color: white;
+            text-align: center;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+        }
+        
+        .stat-item {
+            padding: 30px;
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--amarelo);
+        }
+        
+        .stat-text {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        /* Projects Section */
+        .projects {
+            padding: 100px 0;
+            background-color: var(--branco);
+        }
+        
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .project-card {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+        
+        .project-image {
+            height: 250px;
+            overflow: hidden;
+        }
+        
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .project-card:hover .project-image img {
+            transform: scale(1.1);
+        }
+        
+        .project-content {
+            padding: 25px;
+            background: var(--branco);
+        }
+        
+        .project-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--cinza-escuro);
+        }
+        
+        .project-content p {
+            color: #7f8c8d;
+            margin-bottom: 20px;
+        }
+        
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .project-tag {
+            background: var(--cinza-claro);
+            color: var(--cinza-escuro);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        
+        /* CTA Section */
+        .cta {
+            padding: 100px 0;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1530036854756-7da10c1d54d9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            text-align: center;
+        }
+        
+        .cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .cta p {
+            max-width: 700px;
+            margin: 0 auto 40px;
+            font-size: 1.1rem;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--cinza-escuro);
+            color: white;
+            padding: 70px 0 30px;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+        
+        .footer-col h3 {
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 2px;
+            background-color: var(--amarelo);
+            bottom: 0;
+            left: 0;
+        }
+        
+        .footer-col p {
+            margin-bottom: 20px;
+            opacity: 0.8;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+            transition: all 0.3s ease;
+            display: block;
+        }
+        
+        .footer-links a:hover {
+            opacity: 1;
+            color: var(--amarelo);
+            padding-left: 5px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--amarelo);
+            color: var(--cinza-escuro);
+            transform: translateY(-3px);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+        
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .tech-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .tech-image {
+                order: -1;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+            }
+            
+            nav ul {
+                margin-top: 20px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            nav ul li {
+                margin: 0 10px 10px;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="https://cdn-icons-png.flaticon.com/512/3079/3079165.png" alt="Agrinho Logo">
+                <div class="logo-text">
+                    <h1>Agrinho 2025</h1>
+                    <span>Inovação Tecnológica no Campo</span>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Início</a></li>
+                    <li><a href="#features">Tecnologias</a></li>
+                    <li><a href="#projects">Projetos</a></li>
+                    <li><a href="#about">Sobre</a></li>
+                    <li><a href="#contact">Contato</a></li>
+                    <li><a href="#" class="btn btn-primary">Participar</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Inovação Tecnológica Transformando o Agronegócio</h1>
+            <p>Descubra como a tecnologia está revolucionando a agricultura e criando soluções sustentáveis para o futuro do campo</p>
+            <div class="hero-buttons">
+                <a href="#features" class="btn btn-primary">Explorar Tecnologias</a>
+                <a href="#projects" class="btn btn-secondary">Ver Projetos</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <div class="section-title">
+                <h2>Tecnologias Agrícolas Inovadoras</h2>
+                <p>Conheça as principais tecnologias que estão transformando o campo brasileiro</p>
+            </div>
+            <div class="features-grid">
+                <!-- Feature 1 -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>Agricultura de Precisão</h3>
+                    <p>Sensores, drones e IA para monitoramento preciso das lavouras, reduzindo custos e aumentando produtividade.</p>
+                    <a href="#" class="btn btn-tertiary">Saiba Mais</a>
+                </div>
+                
+                <!-- Feature 2 -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-tint"></i>
+                    </div>
+                    <h3>Irrigação Inteligente</h3>
+                    <p>Sistemas automatizados que analisam umidade do solo e previsão do tempo para otimizar o uso da água.</p>
+                    <a href="#" class="btn btn-tertiary">Saiba Mais</a>
+                </div>
+                
+                <!-- Feature 3 -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <h3>Biotecnologia</h3>
+                    <p>Desenvolvimento de sementes mais resistentes e adaptadas às mudanças climáticas.</p>
+                    <a href="#" class="btn btn-tertiary">Saiba Mais</a>
+                </div>
+                
+                <!-- Feature 4 -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Apps Agrícolas</h3>
+                    <p>Aplicações que auxiliam no controle de pragas, gestão da propriedade e conexão com mercados.</p>
+                    <a href="#" class="btn btn-tertiary">Saiba Mais</a>
+                </div>
+                
+                <!-- Feature 5 -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Big Data no Campo</h3>
+                    <p>Análise de dados para prever safras, otimizar insumos e tomar decisões estratégicas.</p>
+                    <a href="#" class="btn btn-tertiary">Saiba Mais</a>
+                </div>
+                
+                <!-- Feature 6 -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-solar-panel"></i>
+                    </div>
+                    <h3>Energias Renováveis</h3>
+                    <p>Soluções sustentáveis de energia para propriedades rurais, como solar e biogás.</p>
+                    <a href="#" class="btn btn-tertiary">Saiba Mais</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technologies Section -->
+    <section id="about" class="technologies">
+        <div class="container tech-container">
+            <div class="tech-content">
+                <h3>Agrinho 2025: Conectando o Campo à Inovação</h3>
+                <p>O programa Agrinho 2025 tem como objetivo principal levar conhecimento sobre inovação tecnológica para estudantes e produtores rurais, mostrando como a tecnologia pode ser aliada no desenvolvimento de uma agricultura mais sustentável e produtiva.</p>
+                
+                <div class="tech-list">
+                    <div class="tech-item">
+                        <i class="fas fa-check-circle"></i>
+                        <div>
+                            <h4>Educação Digital</h4>
+                            <p>Capacitação de professores e estudantes para uso de tecnologias no campo</p>
+                        </div>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fas fa-check-circle"></i>
+                        <div>
+                            <h4>Soluções Sustentáveis</h4>
+                            <p>Incentivo ao desenvolvimento de projetos que unam tecnologia e sustentabilidade</p>
+                        </div>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fas fa-check-circle"></i>
+                        <div>
+                            <h4>Conectividade Rural</h4>
+                            <p>Promoção da inclusão digital no campo como ferramenta de desenvolvimento</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <a href="#" class="btn btn-primary">Saiba mais sobre o programa</a>
+            </div>
+            
+            <div class="tech-image">
+                <img src="https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Tecnologia no campo">
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">+1200</div>
+                    <div class="stat-text">Escolas Participantes</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">85%</div>
+                    <div class="stat-text">Aumento na Produtividade</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">+5000</div>
+                    <div class="stat-text">Projetos Desenvolvidos</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">40%</div>
+                    <div class="stat-text">Economia de Recursos</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <div class="section-title">
+                <h2>Projetos Inovadores</h2>
+                <p>Conheça alguns dos projetos desenvolvidos por estudantes participantes do Agrinho</p>
+            </div>
+            
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1581093450021-4a7360e9a7f3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Projeto Drone Agrícola">
+                    </div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="project-tag">Drones</span>
+                            <span class="project-tag">Monitoramento</span>
+                        </div>
+                        <h3>Drone para Análise de Solo</h3>
+                        <p>Sistema de drones com sensores para análise nutricional do solo em tempo real.</p>
+                        <a href="#" class="btn btn-secondary">Ver Detalhes</a>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Projeto Irrigação Inteligente">
+                    </div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="project-tag">IoT</span>
+                            <span class="project-tag">Sustentabilidade</span>
+                        </div>
+                        <h3>Irrigação por IoT</h3>
+                        <p>Sistema de irrigação automatizado que se adapta às condições climáticas.</p>
+                        <a href="#" class="btn btn-secondary">Ver Detalhes</a>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1586771107445-d3ca888129ce?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Projeto App Agrícola">
+                    </div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="project-tag">Aplicativo</span>
+                            <span class="project-tag">Mercado</span>
+                        </div>
+                        <h3>Conecta Agro</h3>
+                        <p>Aplicativo que conecta pequenos produtores diretamente aos consumidores.</p>
+                        <a href="#" class="btn btn-secondary">Ver Detalhes</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 50px;">
+                <a href="#" class="btn btn-primary">Ver Todos os Projetos</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <h2>Participe do Agrinho 2025</h2>
+            <p>Inscreva sua escola ou projeto e faça parte dessa revolução tecnológica no campo. Juntos, podemos construir uma agricultura mais sustentável e eficiente.</p>
+            <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+                <a href="#" class="btn btn-primary">Inscrever Escola</a>
+                <a href="#" class="btn btn-secondary">Enviar Projeto</a>
+                <a href="#" class="btn btn-tertiary">Seja Parceiro</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Sobre o Agrinho</h3>
+                    <p>Programa educacional que une tecnologia e agricultura, promovendo inovação e sustentabilidade no campo.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Links Rápidos</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Início</a></li>
+                        <li><a href="#features">Tecnologias</a></li>
+                        <li><a href="#projects">Projetos</a></li>
+                        <li><a href="#about">Sobre</a></li>
+                        <li><a href="#contact">Contato</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Tecnologias</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Agricultura de Precisão</a></li>
+                        <li><a href="#">Irrigação Inteligente</a></li>
+                        <li><a href="#">Biotecnologia</a></li>
+                        <li><a href="#">Apps Agrícolas</a></li>
+                        <li><a href="#">Big Data</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Contato</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Av. das Tecnologias, 123 - Centro</p>
+                    <p><i class="fas fa-phone"></i> (41) 98765-4321</p>
+                    <p><i class="fas fa-envelope"></i> contato@agrinho2025.com.br</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Agrinho - Inovação Tecnológica no Campo. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</body>
+</html>
